@@ -112,9 +112,9 @@ class DropBoxController {
       this.removeTask().then((responses) => {
 
         responses.forEach(response => {
-          if (response.fields.key) {
+          if (responses.fields.key) {
             this.getFirebaseRef().child
-              (response.fields.key).remove();
+              (responses.fields.key).remove();
           }
         })
         console.log('responses')

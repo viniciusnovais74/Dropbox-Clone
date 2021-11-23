@@ -20,7 +20,9 @@ router.delete('/file', (req, res) => {
     if (fs.existsSync(path)) {
       fs.unlink(path, err => {
         if (err) {
-          res.status(400).json({ err })
+          res.status(400).json({
+            err
+          })
         } else {
           res.json({ fields })
         }
@@ -28,6 +30,7 @@ router.delete('/file', (req, res) => {
     }
   })
 })
+
 router.post('/upload', (req, res) => {
 
   let form = new formidable.IncomingForm({
