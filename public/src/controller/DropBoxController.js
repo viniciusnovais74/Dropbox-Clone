@@ -72,7 +72,7 @@ class DropBoxController {
       ajax.send(formData);
     });
   }
-
+//Remove Arquivos
   removeTask() {
 
     let promises = [];
@@ -92,7 +92,7 @@ class DropBoxController {
     })
     return Promise.all(promises);
   }
-
+//Inicia Eventos dos Botões em Geral
   initEvents() {
 
     this.btnNewFolder.addEventListener('click', e => {
@@ -183,17 +183,17 @@ class DropBoxController {
       this.modalShow();
     });
   }
-
+//Upload Completo - 1
   uploadComplete() {
     this.modalShow(false)
     this.inputFilesEl.value = "";
     this.btnSendFileEl.disabled = false
   }
-
+//Acesso ao Firebase
   getFirebaseRef() {
     return firebase.database().ref('files')
   }
-
+//Envio de arquivos
   uploadTask(files) {
 
     let promises = [];
